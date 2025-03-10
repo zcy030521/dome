@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 100vw;height: 100vh;">
+  <div style="width: 100vw;height: 100vh;background-color: #f0f0f0;">
     <div>
       <router-view></router-view>
     </div>
