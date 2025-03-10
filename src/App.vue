@@ -1,30 +1,17 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div style="width: 100vw;height: 100vh;">
+    <div>
+      <router-view></router-view>
+    </div>
+    <van-tabbar v-model="active">
+      <van-tabbar-item icon="wap-home-o" to="/">首页</van-tabbar-item>
+      <van-tabbar-item icon="list-switch" to="/cate">分类</van-tabbar-item>
+      <van-tabbar-item icon="cart-o" to="/car">购物车</van-tabbar-item>
+      <van-tabbar-item icon="contact-o" to="/my">我的</van-tabbar-item>
+    </van-tabbar>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
-
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<script setup>
+import { ref } from 'vue';
+const active = ref(0);
+</script>
