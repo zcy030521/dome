@@ -25,6 +25,7 @@
 
 
                         <el-form-item>
+                            <el-button @click="router.push('/login')">返回</el-button>
                             <el-button type="primary" @click="submitForm(formRef)">
                                 注册
                             </el-button>
@@ -80,7 +81,7 @@ const validateLoginPwd = (rule: any, value: any, callback: any) => {
 //验证确认密码
 const validateLoginPwd2 = (rule: any, value: any, callback: any) => {
     if (value === '') {
-        callback(new Error('请输入密码'))
+        callback(new Error('请输入确认密码'))
     } else {      
         callback()
     }
