@@ -1,62 +1,70 @@
-<<<<<<< HEAD
-import { createRouter,createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
+import list from '../lxkcomponents/list.vue';
+import Review from '../lxkcomponents/Review.vue';
+import Victory from '../lxkcomponents/Victory.vue';
+import ShowReview from '../lxkcomponents/ShowReview.vue';
+import Money from '../lxkcomponents/Money.vue';
+import Recommend from '../lxkcomponents/Recommend.vue';
+import Feedback from '../lxkcomponents/Feedback.vue';
+import Service from '../lxkcomponents/Service.vue';
+import Setting from '../lxkcomponents/Setting.vue';
+import AI from '../lxkcomponents/AI.vue';
+const routes:Array<RouteRecordRaw> =[
+	{
+		path:'/',
+		name:'List',
+		component:list
+	},
+	{
+		path:'/review',
+		name:'Review',
+		component:Review
+	},
+	{
+		path:'/victory',
+		name:'Victory',
+		component:Victory
+	},
+	{
+		path:'/showreview',
+		name:'ShowReview',
+		component:ShowReview
+	},
+	{
+		path:'/money',
+		name:'Money',
+		component:Money
+	},
+	{
+		path:'/recommend',
+		name:'Recommend',
+		component:Recommend
+	},
+	{
+		path:'/feedback',
+		name:'Feedback',
+		component:Feedback
+	},
+	{
+		path:'/service',
+		name:'Service',
+		component:Service
+	},
+	{
+		path:'/setting',
+		name:'Setting',
+		component:Setting
+	},
+	{
+        path:'/ai',
+        name:'AI',
+        component:AI
+    }
+];
 
 const router = createRouter({
-    history:createWebHashHistory(),
-    routes:[
-        {
-            path:'/',
-            name:'登录',
-            component:()=>import('../views/Login.vue')
-        },
-        //重定向手动输入/Login跳转登录页面
-        {
-            path:'/login',
-            redirect:'/'
-        },
-        {
-            path:'/index',
-            name:'首页',
-            component:()=>import('../views/Index.vue')
-        },
-        {
-            path:'/register',
-            name:'注册',
-            component:()=>import('../views/Register.vue')
-        },
-    ]
-=======
-import { createRouter, createWebHistory } from 'vue-router'
-
-const routes:any = [
-    {
-        path: '/',
-        name: 'Home',
-        component: ()=>import('../view/home.vue'),
-        children:[
-            {
-                path:"cate",
-                name:"Cate",
-                component:()=>import('../view/cate.vue')
-            },{
-                path:"car",
-                name:"Car",
-                component:()=>import('../view/car.vue')
-            },{
-                path:"my",
-                name:"My",
-                component:()=>import('../view/my.vue')
-            }
-        ]
-    },
-
-   
-]
-
-const router = createRouter({
-    history: createWebHistory(),
-    routes,
->>>>>>> 0210a3b8718037a3ded9f5ee1e019da2ce099205
-})
+	history:createWebHistory(),
+	routes,
+});
 
 export default router

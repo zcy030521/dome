@@ -9,23 +9,22 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "axios": "^1.8.3",
-    "element-plus": "^2.9.6",
-    "sass-embedded": "^1.85.1",
-=======
-    "@nutui/nutui": "^4.3.13",
+    "@element-plus/icons-vue": "^2.3.1",
+    "axios": "^1.8.1",
+    "element-plus": "^2.9.5",
+    "mockjs": "^1.1.0",
+    "openai": "^4.86.2",
+    "socket.io-client": "^4.8.1",
     "vant": "^4.9.17",
->>>>>>> 0210a3b8718037a3ded9f5ee1e019da2ce099205
     "vue": "^3.5.13",
-    "vue-router": "^4.5.0"
+    "vue-router": "^4.5.0",
+    "vue-virtual-scroll-list": "^2.3.5"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/tsconfig": "^0.7.0",
     "typescript": "~5.7.2",
     "vite": "^6.2.0",
-    "vite-plugin-style-import": "^1.4.1",
     "vue-tsc": "^2.2.4"
   }
 }
