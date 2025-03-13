@@ -82,13 +82,24 @@ const rules = reactive<FormRules<typeof formDate>>({
 //登录
 const submitForm = (formEl: FormInstance | undefined) => {
     if (!formEl) return
-    formEl.validate((valid) => {
-        if (valid) {
-            $Login(formDate)
-        } else {
-            console.log('error submit!')
-        }
-    })
+        formEl.validate((valid) => {
+            if(valid){
+                if(formDate.loginId == 'admin' && formDate.loginPwd == '123456'){
+                    alert('登录成功')
+                    router.push('/index')
+                }else{
+                    alert('账号或密码错误')
+                }
+            }
+        })
+    // if (!formEl) return
+    // formEl.validate((valid) => {
+    //     if (valid) {
+    //         $Login(formDate)
+    //     } else {
+    //         console.log('error submit!')
+    //     }
+    // })
 }
 
 //重置

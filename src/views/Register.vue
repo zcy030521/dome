@@ -94,17 +94,33 @@ const rules = reactive<FormRules<typeof formDate>>({
     loginPwd2: [{ validator: validateLoginPwd2, trigger: 'blur' }]
 })
 
-//登录
-const submitForm = (formEl: FormInstance | undefined) => {
+//注册
+const submitForm = (formEl: FormInstance | undefined) =>{
     if (!formEl) return
     formEl.validate((valid) => {
         if (valid) {
-            
+            if(formDate.loginPwd !== formDate.loginPwd2){
+                alert('两次密码不一致')
+            }else{
+                console.log('注册成功')
+                router.push('/login')
+            }
         } else {
             console.log('error submit!')
         }
     })
 }
+
+// const submitForm = (formEl: FormInstance | undefined) => {
+//     if (!formEl) return
+//     formEl.validate((valid) => {
+//         if (valid) {
+            
+//         } else {
+//             console.log('error submit!')
+//         }
+//     })
+// }
 
 //重置
 const resetForm = (formEl: FormInstance | undefined) => {
