@@ -1,19 +1,22 @@
 import { createApp } from 'vue'
-import './style.css'
 import App from './App.vue'
 import router from './router'
+import './style.css'
+import { ethers } from 'ethers'
 import axios from 'axios'
-import ElementPlus from 'element-plus'
-import * as ElementPlusIconsVue from '@element-plus/icons-vue'
-import 'element-plus/dist/index.css'
-import 'vant/lib/index.css';
-import vant from 'vant'
-let app = createApp(App)
+
+// 配置 axios
+axios.defaults.baseURL = import.meta.env.VITE_API_URL || 'http://localhost:3000'
+axios.defaults.timeout = 10000
+axios.defaults.headers.common['Content-Type'] = 'application/json'
+
+const app = createApp(App)
 app.use(router)
-app.use(ElementPlus)
-app.use(vant)
-app.config.globalProperties.axios = axios
-for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
-    app.component(key, component)
-  }
+
+// 全局错误处理
+app.config.errorHandler = (err, vm, info) => {
+  console.error('全局错误:', err)
+  console.error('错误信息:', info)
+}
+
 app.mount('#app')

@@ -9,19 +9,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@element-plus/icons-vue": "^2.3.1",
-    "axios": "^1.8.1",
-    "element-plus": "^2.9.5",
-    "mockjs": "^1.1.0",
-    "openai": "^4.86.2",
-    "socket.io-client": "^4.8.1",
-    "vant": "^4.9.17",
+    "@metamask/detect-provider": "^2.0.0",
+    "axios": "^1.8.2",
+    "ethers": "^5.7.2",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0",
-    "vue-virtual-scroll-list": "^2.3.5"
+    "vue-virtual-scroller": "^2.0.0-beta.8",
+    "web3": "^4.16.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/cli-service": "^5.0.8",
     "@vue/tsconfig": "^0.7.0",
     "typescript": "~5.7.2",
     "vite": "^6.2.0",
